@@ -11,6 +11,7 @@ class Customer(models.Model):
     def __str__(self):
         return str(self.name)
 
+# Category of food items offered
 class Category(models.Model):
     options = (
         ('breakfast', 'breakfast'),
@@ -23,6 +24,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+# All available food items
 class FoodItem(models.Model):
     name = models.CharField(max_length=200)
     category = models.ManyToManyField(Category)
@@ -33,6 +35,7 @@ class FoodItem(models.Model):
     quantity = models.IntegerField(default=1, null=True, blank=True)
 
 # For user page ---------------------------------------------------------------------------
+# Consumed food items
 class UserFoodItem(models.Model):
     customer = models.ManyToManyField(Customer, blank=True)
     fooditem = models.ManyToManyField(FoodItem) 
