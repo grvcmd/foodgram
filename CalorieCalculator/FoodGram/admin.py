@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import *
 
+#username: ogadmin
+#pwd: pwd
+
 # Register your models here.
 
 class FoodAdmin(admin.ModelAdmin):
